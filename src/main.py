@@ -100,7 +100,7 @@ def worker(rank, options, logger):
 
     if(options.wandb and options.master):
         logging.debug("Starting wandb")
-        wandb.init(project = "mrl", notes = options.notes, tags = [], config = vars(options))
+        wandb.init(project = "CyCLIP", notes = options.notes, tags = [], config = vars(options), dir=options.logs)
         wandb.run.name = options.name
         wandb.save(os.path.join(options.log_dir_path, "params.txt"))
 
